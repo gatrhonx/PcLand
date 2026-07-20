@@ -1,0 +1,8 @@
+require("monitors")
+require("env")
+require("appearance")
+require("animations")
+--require("plugins")
+require("rules")
+require("autostart")
+require("keybind") 
