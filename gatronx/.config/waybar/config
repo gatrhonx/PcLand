@@ -1,0 +1,83 @@
+{
+    "layer": "top",
+    "position": "top",
+    "margin": "5 5 0 5",
+    "mod": "dock",
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "height": 40,
+
+    // Posiciones de los módulos en la barra
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["pulseaudio", "custom/network", "cpu", "memory"],
+
+    // Configuración de los módulos nativos de Hyprland (Pelotitas)
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "on-click": "activate",
+        "format": "{icon}",
+        "format-icons": {
+            "active": "",
+            "default": "",
+            "empty": "",
+            "urgent": ""
+        },
+        "persistent-workspaces": {
+            "*": 2 // Solo dejamos el 1 fijo para que la barra nunca esté vacía
+        }
+    },
+
+    // Módulo de Reloj
+    "clock": {
+        "format": "󰣇 {:%H:%M}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>"
+    },
+
+    // Módulo de audio pulseaudio
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-muted": " ",
+        "format-icons": [" ", " ", " "],
+        "tooltip-format": "Volumen: {volume}%",
+        "scroll-step": 5,
+        "smooth-scrolling-threshold": 1,
+        "on-click": "ags toggle volume-popup"
+    },
+
+    // Módulo de CPU
+    "cpu": {
+        "format": "  {usage}%",
+        "tooltip": false
+    },
+
+    // Módulo de Memoria RAM
+    "memory": {
+        "format": "  {}%"
+    },
+
+    // Módulo de Red
+    "custom/network": {
+        "exec": "~/.config/waybar/scripts/network.sh",
+        "return-type": "json",
+        "interval": 5,
+        "on-click": "nm-connection-editor"
+    }
+
+    // ---- Módulos guardados para más adelante ----
+    // "battery": {
+    //     "states": { "good": 95, "warning": 30, "critical": 1 },
+    //     "format": "{icon} {capacity}%",
+    //     "format-charging": "󰂄 {capacity}%",
+    //     "format-plugged": " {capacity}%",
+    //     "format-icons": ["󰁺", "󰁼", "󰁾", "󰂀", "󰁹"]
+    // },
+    // "bluetooth": {
+    //     "format": "{status} ",
+    //     "format-connected": "{device_alias} ",
+    //     "format-connected-battery": "{device_alias} {device_battery_percentage}% ",
+    //     "on-click": "blueman-manager"
+    // }
+}
