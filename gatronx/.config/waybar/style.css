@@ -1,0 +1,122 @@
+
+* {
+    font-family: "Jet Brains Mono Nerd Font", "Font Awesome 6 Free", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    min-height: 0;
+}
+
+/* Fondo general de la barra (flotante gracias al "margin" en config.jsonc) */
+window#waybar {
+    background-color: rgba(30, 30, 46, 0.65); /* base con transparencia media */
+    border-radius: 12px;
+    color: #cdd6f4; /* text */
+}
+
+window#waybar.top {
+    border: none; /* Quita cualquier borde raro que agregue GTK por defecto */
+}
+
+tooltip {
+    background-color: #181825; /* mantle */
+    border-radius: 10px;
+    border: 1px solid #313244; /* surface0 */
+}
+tooltip label {
+    color: #cdd6f4;
+}
+
+/* =========================================
+	  Workspaces (modulos izquiera)
+   ========================================= */
+#workspaces {
+    margin: 4px 4px 4px 3px;
+    padding: 0 4px;
+}
+
+#workspaces button {
+    color: #6c7086; /* overlay0, punto "apagado" */
+    padding: 0 5px;
+    margin: 0 2px;
+    font-size: 10px;
+    transition: color 0.2s ease-in-out;
+}
+
+#workspaces button.active {
+    color: #cba6f7; /* mauve */
+    font-size: 12px;
+}
+
+#workspaces button.empty {
+    color: #45475a; /* surface1, aún más apagado */
+}
+
+#workspaces button.urgent {
+    color: #f38ba8; /* red */
+}
+
+#workspaces button:hover {
+    color: #b4befe; /* lavender */
+}
+
+/* =========================================
+	    Módulo central: reloj
+   ========================================= */
+#clock {
+    color: #f5e0dc; /* rosewater */
+    font-weight: 700;
+    margin: 4px 10px;
+}
+
+/* =========================================
+            Módulos de la derecha
+   ========================================= */
+#pulseaudio,
+#custom-network,
+#cpu,
+#memory {
+    margin: 4px 10px;
+    padding: 0 2px;
+    transition: color 0.2s ease-in-out;
+}
+
+#pulseaudio {
+    color: #afa1e3; /* mora */
+}
+#pulseaudio:hover {
+    color: #8e76e3; /* ado */
+}
+
+#custom-network {
+    color: #a6e3a1; /* verde */
+}
+#custom-network:hover {
+    color: #89dceb; /* turquesa */
+}
+
+#cpu {
+    color: #fab387; /* naranyo */
+}
+
+#memory {
+    color: #f9e2af; /* amarilo */
+    margin-right: 15px; 
+}
+
+/* Separador sutil entre módulos (línea delgada, no caja) */
+#pulseaudio {
+    border-left: 0px solid #313244; /* surface0 */
+    padding-left: 10px;
+}
+#custom-network {
+    border-left: 0px solid #313244;
+    padding-left: 7px;
+}
+#cpu {
+    border-left: 0px solid #313244;
+    padding-left: 7px;
+}
+#memory {
+    border-left: 0px solid #313244;
+    padding-left: 7px;
+}
