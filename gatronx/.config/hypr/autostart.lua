@@ -1,0 +1,5 @@
+hl.on("hyprland.start", function()
+    hl.exec_cmd("awww-daemon > /dev/null 2>&1")
+    hl.exec_cmd("ags run")
+    hl.exec_cmd("waybar")
+end)
