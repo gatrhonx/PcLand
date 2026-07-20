@@ -1,0 +1,61 @@
+// https://gitlab.gnome.org/GNOME/gtk/-/blob/gtk-3-24/gtk/theme/Adwaita/_colors-public.scss
+$fg-color: #{"@theme_fg_color"};
+$bg-color: #{"@theme_bg_color"};
+
+window.Bar {
+  background: transparent;
+  color: $fg-color;
+  font-weight: bold;
+
+  > centerbox {
+    background: $bg-color;
+    border-radius: 10px;
+    margin: 8px;
+  }
+  button {
+    border-radius: 8px;
+    margin: 2px;
+  }
+}
+
+window.VolumePopup {
+  background: transparent;
+}
+
+.volume-popup-box {
+  background: rgba(30, 30, 46, 0.85);
+  border-radius: 12px;
+  padding: 12px 16px;
+  min-width: 220px;
+}
+
+.volume-popup-box label {
+  color: #a6e3a1;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.volume-popup-box scale trough {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  min-height: 8px;
+}
+
+.volume-popup-box scale highlight {
+  background: #a6e3a1;
+  border-radius: 8px;
+}
+
+.volume-popup-box scale slider {
+  background: #a6e3a1;
+  border-radius: 50%;
+  min-width: 14px;
+  min-height: 14px;
+  margin: 0;
+}
+
+.click-catcher {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
