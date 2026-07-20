@@ -1,0 +1,6 @@
+[config]
+reload_apps = true
+
+[templates.waybar]
+input_path = "/home/gatronx/.config/wallpaper-selector/colors.css.template"
+output_path = "/home/gatronx/.config/waybar/colors.css"
